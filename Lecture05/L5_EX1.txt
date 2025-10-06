@@ -1,2 +1,9 @@
- cut -f7 peopledata_L5.tsv | grep -v "country" | while read countries; do count=$((${count}+1)); echo "The count is ${count}" ; echo "The country is ${countries}" >> list_of_countries_and_counter.txt ; done
+count=0
+cut -f7 peopledata_L5.tsv | grep -v "country" |
+while read countries
+do
+count=$((${count}+1))
+echo "The count is ${count}" >> list_of_countries_and_counter.txt
+echo "The country is ${countries}" >>  list_of_countries_and_counter.txt
+done  
 
